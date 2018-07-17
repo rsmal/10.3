@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.1</title>
+      
+      <link rel="stylesheet" href="vendor/flickity.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="vendor/normalize.css"> 
+</head>  
+<body> 
+
+     <div id="result" class="carousel" >
+    </div>
+<script id="template-list" type="x-tmpl-mustache">
+    {{{carousel}}}
+</script>
+ 
+<script id="template-slide" type="x-tmpl-mustache">
+    <div class="carousel-cell" id="{{id}}"style="background-image: url('{{image}}')">
+        <p class="carousel__paragraph">{{text}}</p>
+       
+    </div>
+</script>
+
+      <script>
+          var carouselData = [{
+              text: 'Spain',
+              image: 'https://tinyurl.com/ydfh9r2x',
+              id: 'carousel-cell1',
+              coords: {lat: 40.500652, lng: -5.258251}
+
+          }, {
+              text: 'France',
+              image: 'https://tinyurl.com/ycpsddow',
+              id: 'carousel-cell2',
+              coords: {lat: 45.141550, lng: 2.432749}
+          }, {
+              text: 'Portugal',
+              image: 'https://tinyurl.com/y8fahhnp',
+              id: 'carousel-cell3',
+              coords: {lat: 39.124545, lng: -8.089669}
+          }, {
+              text: 'Poland',
+              image: 'https://tinyurl.com/y8fahhnp',
+              id: 'carousel-cell4',
+              coords: {lat: 1.578815, lng: 19.495853}
+          }, {
+              text: 'Norway',
+              image: 'https://tinyurl.com/ydfh9r2x',
+              id: 'carousel-cell5',
+              coords: {lat: 60.806387, lng: 9.438137}
+          }];
+      </script>
+
+
+<div class="button-group">
+  <button class="button">RESTART</button>
+</div>
+
+<div class="progress-bar"></div>
+<div id="map" class="google-map"></div>
+
+<div class="car__links">
+   <a class="links" href="#carousel-cell1">View cell 1</a>
+   <a class="links" href="#carousel-cell2">View cell 2</a>
+   <a class="links" href="#carousel-cell3">View cell 3</a>
+   <a class="links" href="#carousel-cell4">View cell 4</a>
+   <a class="links" href="#carousel-cell5">View cell 5</a>
+   
+</div>
+
+<script src="vendor/flickity.pkgd.min.js"></script>
+<script src="vendor/hash.js"></script>
+<script src="vendor/mustache.js"></script>
+<script src="js/script.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZULirBhft05IoVABz-G3ZZD9qnKXGIws&callback=initMap"></script>
+</body>
+</html>
